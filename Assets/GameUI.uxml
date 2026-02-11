@@ -1,8 +1,8 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
-    <ui:VisualElement name="HealthBarBackground" style="flex-grow: 0; background-image: url(&quot;project://database/Assets/Art/Ruby/UI/UIHealthFrame.png?fileID=21300000&amp;guid=e04807cd45105ec409b00463fe6ab7b1&amp;type=3#UIHealthFrame&quot;); width: 495px; height: 216px; -unity-background-scale-mode: scale-to-fit;">
-        <ui:VisualElement name="HealthBarContainer" style="flex-grow: 1; height: 210px; width: 536px;">
-            <ui:VisualElement name="HealthBar" style="flex-grow: 1; background-image: url(&quot;project://database/Assets/Art/Ruby/UI/UIHealthBar.png?fileID=21300000&amp;guid=be3322f3a1dbc6e44b25b63f3bb91e16&amp;type=3#UIHealthBar&quot;); width: 259px; height: 71px; position: absolute; top: 66px; left: 207px;" />
+    <ui:VisualElement name="HealthBarBackground" style="flex-grow: 0; background-image: url(&quot;project://database/Assets/Art/Ruby/UI/UIHealthFrame.png?fileID=21300000&amp;guid=e04807cd45105ec409b00463fe6ab7b1&amp;type=3#UIHealthFrame&quot;); width: 535px; height: 224px; -unity-background-scale-mode: scale-to-fit;">
+        <ui:VisualElement name="HealthBarContainer" style="flex-grow: 1; position: absolute; height: 77px; width: 271px; top: 68px; left: 225px;">
+            <ui:VisualElement name="HealthBar" style="flex-grow: 1; background-image: url(&quot;project://database/Assets/Art/Ruby/UI/UIHealthBar.png?fileID=21300000&amp;guid=be3322f3a1dbc6e44b25b63f3bb91e16&amp;type=3#UIHealthBar&quot;);" />
         </ui:VisualElement>
-        <ui:VisualElement name="CharacterPortrait" style="flex-grow: 1; background-image: url(&quot;project://database/Assets/Art/Ruby/UI/CharacterPortrait.png?fileID=21300000&amp;guid=374193bc7008fa34ab9b2bbca376937b&amp;type=3#CharacterPortrait&quot;); -unity-background-scale-mode: scale-to-fit; position: absolute; height: 172px; top: 21px; left: -14px; right: 220px;" />
+        <ui:VisualElement name="CharacterPortrait" style="flex-grow: 1; background-image: url(&quot;project://database/Assets/Art/Ruby/UI/CharacterPortrait.png?fileID=21300000&amp;guid=374193bc7008fa34ab9b2bbca376937b&amp;type=3#CharacterPortrait&quot;); -unity-background-scale-mode: scale-to-fit; position: absolute; height: 179px; top: 26px; left: -18px; right: 226px;" />
     </ui:VisualElement>
 </ui:UXML>
