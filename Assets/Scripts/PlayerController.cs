@@ -7,7 +7,8 @@ using UnityEngine.InputSystem;
 public class PlayerController : MonoBehaviour
 {
 	// Variables related to player character movement
-	public InputAction MoveAction;
+	public InputAction moveAction;
+    public InputAction talkAction;
 	Rigidbody2D rigidbody2d;
 	Vector2 move;
 	public float moveSpeed = 5.0f;
@@ -32,7 +33,8 @@ public class PlayerController : MonoBehaviour
 	// Start is called before the first frame update
 	void Start()
     {
-        MoveAction.Enable();
+        moveAction.Enable();
+        talkAction.Enable();
         rigidbody2d = GetComponent<Rigidbody2D>();
         currentHealth = maxHealth;
         animator = GetComponent<Animator>();
@@ -41,7 +43,7 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        move = MoveAction.ReadValue<Vector2>();
+        move = moveAction.ReadValue<Vector2>();
         if (!Mathf.Approximately(move.x, 0.0f) || !Mathf.Approximately(move.y, 0.0f)) 
         {
             moveDirection.Set(move.x, move.y);
@@ -64,6 +66,11 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space)) 
         {
             Launch();
+        }
+
+        if (Input.GetKeyDown(KeyCode.LeftShift)) 
+        {
+            FindNPC();
         }
     }
 
@@ -89,6 +96,21 @@ public class PlayerController : MonoBehaviour
 
         currentHealth = Mathf.Clamp(currentHealth + amount, 0, maxHealth);
         UIHandler.instance.SetHealthValue(currentHealth / (float)maxHealth);
+    }
+
+    void FindNPC() 
+    {
+        RaycastHit2D hit = Physics2D.Raycast(rigidbody2d.position + Vector2.up * 0.2f, moveDirection, 1.5f, LayerMask.GetMask("NPC"));
+
+        if (hit.collider != null) 
+        {
+            NonPlayerCharacter npc = hit.collider.GetComponent<NonPlayerCharacter>();
+
+            if (npc != null) 
+            {
+				UIHandler.instance.DisplayDialogue();
+            }
+        }
     }
 
     void Launch() 

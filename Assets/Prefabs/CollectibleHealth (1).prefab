@@ -10,9 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 304788012734499791}
   - component: {fileID: 3523422405079083295}
-  - component: {fileID: 2491896309863170515}
   - component: {fileID: 2578492927419698192}
-  m_Layer: 8
+  - component: {fileID: 2491896309863170515}
+  m_Layer: 0
   m_Name: CollectibleHealth (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -86,19 +86,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &2491896309863170515
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1061863492391001}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 80352a025ddf72c4fb70219f18b56ef5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  amount: 2
 --- !u!61 &2578492927419698192
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -144,3 +131,16 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2.56, y: 1.4935328}
   m_EdgeRadius: 0
+--- !u!114 &2491896309863170515
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1061863492391001}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 80352a025ddf72c4fb70219f18b56ef5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  amount: 2

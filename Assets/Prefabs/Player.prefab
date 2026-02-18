@@ -100,94 +100,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bfd3631f426b16c41858d04d0370acdf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MoveAction:
+  moveAction:
     m_Name: Move
     m_Type: 0
     m_ExpectedControlType: 
-    m_Id: 6025ed84-8510-48ca-8fd7-66f400491483
+    m_Id: 092bdc07-7155-4f62-ab2c-75a93c8f010b
     m_Processors: 
     m_Interactions: 
-    m_SingletonActionBindings:
-    - m_Name: 2D Vector
-      m_Id: 30a85d43-9d23-4bc8-a86f-836281df2f09
-      m_Path: 2DVector
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Move
-      m_Flags: 4
-    - m_Name: up
-      m_Id: 2e06bf02-7a6c-4193-ac0d-7aadbcf3c117
-      m_Path: <Keyboard>/upArrow
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Move
-      m_Flags: 8
-    - m_Name: down
-      m_Id: e217cf19-337b-4eb9-8eef-6329e198c024
-      m_Path: <Keyboard>/downArrow
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Move
-      m_Flags: 8
-    - m_Name: left
-      m_Id: 6110234b-c905-46df-bb4d-c35a91c4d40f
-      m_Path: <Keyboard>/leftArrow
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Move
-      m_Flags: 8
-    - m_Name: right
-      m_Id: 1beed839-222c-4ca6-8a98-48739038f12e
-      m_Path: <Keyboard>/rightArrow
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Move
-      m_Flags: 8
-    - m_Name: 2D Vector
-      m_Id: 379f8027-d8d2-45bf-b6ba-04bcf54c6491
-      m_Path: 2DVector
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Move
-      m_Flags: 4
-    - m_Name: up
-      m_Id: 65877561-aac6-4b72-a208-033760483ddb
-      m_Path: <Keyboard>/w
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Move
-      m_Flags: 8
-    - m_Name: down
-      m_Id: d84405ea-50b2-4e2c-b13d-e8bf44d6bb66
-      m_Path: <Keyboard>/s
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Move
-      m_Flags: 8
-    - m_Name: left
-      m_Id: 0ce7f593-9712-4fb5-8697-d5d65c94ea43
-      m_Path: <Keyboard>/a
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Move
-      m_Flags: 8
-    - m_Name: right
-      m_Id: fb6922af-cbd3-41e2-a608-1de6f1d7830e
-      m_Path: <Keyboard>/d
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Move
-      m_Flags: 8
+    m_SingletonActionBindings: []
+    m_Flags: 0
+  talkAction:
+    m_Name: Talk
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: 5d6628bc-6085-4274-9ab4-084222c12503
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings: []
     m_Flags: 0
   moveSpeed: 5
   maxHealth: 5
