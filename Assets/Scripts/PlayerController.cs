@@ -13,8 +13,13 @@ public class PlayerController : MonoBehaviour
 	Vector2 move;
 	public float moveSpeed = 5.0f;
 
-    // Variables related to player character animation
-    Animator animator;
+    // Variables related to audio;
+    AudioSource audioSource;
+    public AudioClip damageClip;
+    public AudioClip projectileClip;
+
+	// Variables related to player character animation
+	Animator animator;
     Vector2 moveDirection = new Vector2(1, 0);
 
 	// Variables related to health system
@@ -38,6 +43,7 @@ public class PlayerController : MonoBehaviour
         rigidbody2d = GetComponent<Rigidbody2D>();
         currentHealth = maxHealth;
         animator = GetComponent<Animator>();
+        audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -77,9 +83,14 @@ public class PlayerController : MonoBehaviour
 	// FixedUpdate has the same call rate as the physics system 
 	void FixedUpdate()
 	{
-		Vector2 position = (Vector2)rigidbody2d.position + move * moveSpeed * Time.deltaTime;
+		Vector2 position = (Vector2)rigidbody2d.position + moveSpeed * Time.deltaTime * move;
 		rigidbody2d.MovePosition(position);
 	}
+
+    public void PlaySound(AudioClip clip) 
+    { 
+        audioSource.PlayOneShot(clip);
+    }
 
     public void ChangeHealth(int amount)
     {
@@ -91,7 +102,8 @@ public class PlayerController : MonoBehaviour
             }
             isInvincible = true;
             damageCooldown = timeInvincible;
-            animator.SetTrigger("Hit");
+			audioSource.PlayOneShot(damageClip);
+			animator.SetTrigger("Hit");
         }
 
         currentHealth = Mathf.Clamp(currentHealth + amount, 0, maxHealth);
@@ -113,10 +125,11 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    void Launch() 
+	void Launch() 
     {
         GameObject projectileObject = Instantiate(projectilePrefab, rigidbody2d.position + Vector2.up * 0.5f, Quaternion.identity);
         Projectile projectile = projectileObject.GetComponent<Projectile>();
+        audioSource.PlayOneShot(projectileClip);
         projectile.Launch(moveDirection, 300);
         animator.SetTrigger("Launch");
     }

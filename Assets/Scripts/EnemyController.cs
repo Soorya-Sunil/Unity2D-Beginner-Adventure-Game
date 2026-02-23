@@ -8,8 +8,10 @@ public class EnemyController : MonoBehaviour
 	public float moveSpeed;
 	public bool vertical;
 	public float changeTime = 3.0f;
+	public AudioClip enemyFixed;
 
 	// Private variables
+	AudioSource audioSource;
 	Animator animator;
 	Rigidbody2D rigidbody2d;
 	float timer;
@@ -19,6 +21,7 @@ public class EnemyController : MonoBehaviour
 	// Start is called before the first frame update
 	void Start()
     {
+		audioSource = GetComponent<AudioSource>();
 		animator = GetComponent<Animator>();
         rigidbody2d = GetComponent<Rigidbody2D>();
 		timer = changeTime;
@@ -75,7 +78,9 @@ public class EnemyController : MonoBehaviour
 
 	public void Fix() 
 	{
+		audioSource.Stop();
 		animator.SetTrigger("Fixed");
+		audioSource.PlayOneShot(enemyFixed);
 		broken = false;
 		rigidbody2d.simulated = false;
 	}

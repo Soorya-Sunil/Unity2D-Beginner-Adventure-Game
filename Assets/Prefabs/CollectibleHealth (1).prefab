@@ -144,3 +144,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   amount: 2
+  healthClip: {fileID: 8300000, guid: 173a14cf06354c643b46b235f2a4f974, type: 3}
