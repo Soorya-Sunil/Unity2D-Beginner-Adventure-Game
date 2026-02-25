@@ -26,6 +26,7 @@ public class PlayerController : MonoBehaviour
 	public int maxHealth = 5;
 	int currentHealth;
 	public int health { get { return currentHealth; }}
+    public ParticleSystem hitEffect;
 
     // Variables related to invincibility
     public float timeInvincible = 2.0f;
@@ -100,11 +101,14 @@ public class PlayerController : MonoBehaviour
             {
                 return;
             }
+
             isInvincible = true;
             damageCooldown = timeInvincible;
 			audioSource.PlayOneShot(damageClip);
 			animator.SetTrigger("Hit");
-        }
+			Instantiate(hitEffect.gameObject, transform.position + Vector3.up * 1.0f, Quaternion.identity);
+            hitEffect.Play();
+		}
 
         currentHealth = Mathf.Clamp(currentHealth + amount, 0, maxHealth);
         UIHandler.instance.SetHealthValue(currentHealth / (float)maxHealth);

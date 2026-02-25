@@ -9,6 +9,7 @@ public class EnemyController : MonoBehaviour
 	public bool vertical;
 	public float changeTime = 3.0f;
 	public AudioClip enemyFixed;
+	public ParticleSystem smokeEffect;
 
 	// Private variables
 	AudioSource audioSource;
@@ -81,6 +82,7 @@ public class EnemyController : MonoBehaviour
 		audioSource.Stop();
 		animator.SetTrigger("Fixed");
 		audioSource.PlayOneShot(enemyFixed);
+		smokeEffect.Stop();
 		broken = false;
 		rigidbody2d.simulated = false;
 	}
